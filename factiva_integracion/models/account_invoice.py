@@ -176,7 +176,7 @@ class AccountInvoice(models.Model):
     def _compute_fa_consulta_id(self):
         for inv in self:
             if inv.company_id and inv.journal_id and inv.number:
-                if number.find('-') > 0:
+                if inv.number.find('-') > 0:
                     serie, correlativo = inv.number.split('-')
                     formatt = '%(tipo_doc_emisor)s-%(ruc)s-' \
                               '%(tipo_doc_cmp)s-%(serie)s-%(correlativo)s'
@@ -190,7 +190,7 @@ class AccountInvoice(models.Model):
                     # _logger.warning(formatt % args)
                     inv.fa_consulta_id = formatt % args
                 else:
-                    False
+                    inv.fa_consulta_id = False
             else:
                 inv.fa_consulta_id = False
 
