@@ -17,10 +17,10 @@ class AccountJournal(models.Model):
     tipo_doc_code = fields.Char(related='tipo_doc_id.code',
                                 string='Tipo Doc. Code')
     tipo_doc_rel_id = fields.Many2one('factiva.catalogo.01',
-                                  domain=[('active', '=', True)],
-                                  string='Tipo Doc. Rel. SUNAT')
+                                      domain=[('active', '=', True)],
+                                      string='Tipo Doc. Rel. SUNAT')
     tipo_doc_rel_code = fields.Char(related='tipo_doc_rel_id.code',
-                                string='Tipo Doc. Rel. Code')
+                                    string='Tipo Doc. Rel. Code')
 
 
 class AccountTax(models.Model):

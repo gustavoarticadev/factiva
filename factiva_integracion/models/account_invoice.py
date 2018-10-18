@@ -2,7 +2,7 @@
 import logging
 import pytz
 import voluptuous
-from voluptuous import Schema, Required, All, Length, ALLOW_EXTRA, Optional, Coerce
+from voluptuous import Schema, Required, All, Length, ALLOW_EXTRA, Coerce
 from dateutil.relativedelta import relativedelta
 
 from odoo import api, fields, models
@@ -74,31 +74,39 @@ class AccountInvoice(models.Model):
     @api.model
     def _default_journal(self):
         res = super(AccountInvoice, self)._default_journal()
-        _logger.warning(res)
+        # _logger.warning(res)
         if self._context.get('default_journal_id', False):
-            return self.env['account.journal'].browse(self._context.get('default_journal_id'))
+            return self.env['account.journal'].browse(
+                self._context.get('default_journal_id'))
         inv_type = self._context.get('type', 'out_invoice')
         inv_types = inv_type if isinstance(inv_type, list) else [inv_type]
-        company_id = self._context.get('company_id', self.env.user.company_id.id)
+        company_id = self._context.get('company_id',
+                                       self.env.user.company_id.id)
         domain = [
-            ('type', 'in', [TYPE2JOURNAL[ty] for ty in inv_types if ty in TYPE2JOURNAL]),
+            ('type', 'in',
+             [TYPE2JOURNAL[ty] for ty in inv_types if ty in TYPE2JOURNAL]),
             ('company_id', '=', company_id),
         ]
         if 'out_invoice' in inv_type:
             domain.append(('tipo_doc_code', 'in', ['01', '03', '08']))
         elif 'out_refund' in inv_type:
             domain.append(('tipo_doc_code', 'in', ['07']))
-        _logger.warning(domain)
-        _logger.warning(self.env['account.journal'].search(domain, limit=1))
+        # _logger.warning(domain)
+        # _logger.warning(self.env['account.journal'].search(domain, limit=1))
         return self.env['account.journal'].search(domain, limit=1)
 
     journal_id = fields.Many2one(
-        domain="[('type', 'in', {'out_invoice': ['sale'], 'out_refund': ['sale'], 'in_refund': ['purchase'], 'in_invoice': ['purchase']}.get(type, [])),('tipo_doc_code', 'in',{'out_invoice': ['01','03','08'],'out_refund': ['07']}.get(type,[])), ('company_id', '=', company_id)]")
+        domain="[('type', 'in', {'out_invoice': ['sale'], "
+               "'out_refund': ['sale'], 'in_refund': ['purchase'], "
+               "'in_invoice': ['purchase']}.get(type, [])),"
+               "('tipo_doc_code', 'in',{'out_invoice': ['01','03','08'],"
+               "'out_refund': ['07']}.get(type,[])), "
+               "('company_id', '=', company_id)]")
     tipo_doc_id = fields.Char(related='journal_id.tipo_doc_code',
                               string='Code Doc. SUNAT')
 
     tipo_doc_rel_code = fields.Char(related='journal_id.tipo_doc_rel_code',
-                              string='Code Doc. Rel. SUNAT')
+                                    string='Code Doc. Rel. SUNAT')
 
     estado_envio = fields.Selection(
         ESTADOS_INTEGRACION,
@@ -168,18 +176,21 @@ class AccountInvoice(models.Model):
     def _compute_fa_consulta_id(self):
         for inv in self:
             if inv.company_id and inv.journal_id and inv.number:
-                serie, correlativo = inv.number.split('-')
-                formatt = '%(tipo_doc_emisor)s-%(ruc)s-' \
-                          '%(tipo_doc_cmp)s-%(serie)s-%(correlativo)s'
-                args = {
-                    'tipo_doc_emisor': inv.company_id.tipo_doc_id.code,
-                    'ruc': inv.company_id.vat,
-                    'tipo_doc_cmp': inv.journal_id.tipo_doc_id.code,
-                    'serie': serie,
-                    'correlativo': correlativo
-                }
-                _logger.warning(formatt % args)
-                inv.fa_consulta_id = formatt % args
+                if number.find('-') > 0:
+                    serie, correlativo = inv.number.split('-')
+                    formatt = '%(tipo_doc_emisor)s-%(ruc)s-' \
+                              '%(tipo_doc_cmp)s-%(serie)s-%(correlativo)s'
+                    args = {
+                        'tipo_doc_emisor': inv.company_id.tipo_doc_id.code,
+                        'ruc': inv.company_id.vat,
+                        'tipo_doc_cmp': inv.journal_id.tipo_doc_id.code,
+                        'serie': serie,
+                        'correlativo': correlativo
+                    }
+                    # _logger.warning(formatt % args)
+                    inv.fa_consulta_id = formatt % args
+                else:
+                    False
             else:
                 inv.fa_consulta_id = False
 
@@ -202,9 +213,6 @@ class AccountInvoice(models.Model):
             pattern = pattern + ' - %(district_name)s'
             args['district_name'] = partner.distrito_id.name
         direccion = (pattern % args)
-        _logger.info(type(direccion))
-        _logger.info(direccion)
-
         if len(pattern) > 0:
             return str(pattern % args)
         else:
@@ -441,7 +449,9 @@ class AccountInvoice(models.Model):
                 "precioItemSinIgv": round(base_imponible, 2),
                 "montoItem": round(monto_item_unit * item.quantity, 2),
                 "descuentoMonto": item.quantity * descuento_item_unit,
-                "codAfectacionIgv": item.invoice_line_tax_ids[0].afect_igv.code,
+                "codAfectacionIgv": (
+                    item.invoice_line_tax_ids[0].afect_igv.code
+                ),
                 "tasaIgv": impuesto_ap,
                 "montoIgv": round(monto_igv * item.quantity, 2),
                 # "codSistemaCalculoIsc": "01",  # VERIFICAR
@@ -469,13 +479,17 @@ class AccountInvoice(models.Model):
             # 'anticipo': anticipo,
             # 'servicioHospedaje':
         }
-         # Boleta
+        # Boleta
         if tipo_doc in '03':
-            data['documento'].update({'direccionDestino': self.get_direc(receptor)})
+            data['documento'].update(
+                {'direccionDestino': self.get_direc(receptor)}
+            )
         # Nota de Crédito
         if tipo_doc == u'07':
             data['documento']['sustento'] = self.name
-            data['documento']['tipoMotivoNotaModificatoria'] = self.tipo_nota_doc_id.code
+            data['documento']['tipoMotivoNotaModificatoria'] = (
+                self.tipo_nota_doc_id.code
+            )
             doc_ref = self.search([('number', '=', self.origin)])
             serie_ref, correlativo_ref = doc_ref.number.split('-')
             ref = [{
@@ -487,7 +501,9 @@ class AccountInvoice(models.Model):
             data['referencia'] = ref
         if tipo_doc == u'08':
             data['documento']['sustento'] = self.sustento_ndeb
-            data['documento']['tipoMotivoNotaModificatoria'] = self.tipo_ndeb_id.code
+            data['documento']['tipoMotivoNotaModificatoria'] = (
+                self.tipo_ndeb_id.code
+            )
             if self.inv_ndeb_rel_id:
                 doc_ref = self.inv_ndeb_rel_id
                 serie_ref, correlativo_ref = doc_ref.number.split('-')
@@ -523,14 +539,15 @@ class AccountInvoice(models.Model):
             access_token,
             self.company_id.url_documentos
         )
-        _logger.info(rpta)
+        # _logger.info(rpta)
         if 'error' in rpta:
             data_rpta = rpta['data'].json()
             if 'errors' in data_rpta:
                 errors = data_rpta.get('errors')[0]
                 if 'meta' in errors:
                     meta = data_rpta.get('errors')[0].get('meta')
-                    if 'reenvioHabilitado' in meta and meta.get('reenvioHabilitado'):
+                    if ('reenvioHabilitado' in meta
+                            and meta.get('reenvioHabilitado')):
                         self.env['logs.comprobante'].create(
                             {
                                 'invoice_id': self.id,
@@ -754,7 +771,7 @@ class AccountInvoice(models.Model):
                 values['tipo_nota_doc_id'] = tipo_nota
             refund_invoice = self.create(values)
             invoice_type = {'out_invoice': ('customer invoices credit note'),
-                'in_invoice': ('vendor bill credit note')}
+                            'in_invoice': ('vendor bill credit note')}
             message = (_("This %s has been created from: <a href=# "
                          "data-oe-model=account.invoice data-oe-id=%d>%s</a>")
                        % (invoice_type[invoice.type],

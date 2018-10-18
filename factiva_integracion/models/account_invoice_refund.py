@@ -24,12 +24,15 @@ class AccountInvoiceRefund(models.TransientModel):
     def _default_journal(self):
         _logger.warning(self._context)
         if self._context.get('default_journal_id', False):
-            return self.env['account.journal'].browse(self._context.get('default_journal_id'))
+            return self.env['account.journal'].browse(
+                self._context.get('default_journal_id'))
         inv_type = self._context.get('type', 'out_invoice')
         inv_types = inv_type if isinstance(inv_type, list) else [inv_type]
-        company_id = self._context.get('company_id', self.env.user.company_id.id)
+        company_id = self._context.get('company_id',
+                                       self.env.user.company_id.id)
         domain = [
-            ('type', 'in', [TYPE2JOURNAL[ty] for ty in inv_types if ty in TYPE2JOURNAL]),
+            ('type', 'in',
+             [TYPE2JOURNAL[ty] for ty in inv_types if ty in TYPE2JOURNAL]),
             ('tipo_doc_code', 'in', ['07']),
             ('company_id', '=', company_id),
         ]
@@ -54,7 +57,8 @@ class AccountInvoiceRefund(models.TransientModel):
         'account.journal',
         string='Journal',
         default=_default_journal,
-        domain="[('type', 'in', {'out_invoice': ['sale']}.get(type, [])),('tipo_doc_code', 'in',{'out_invoice': ['07']}.get(type,[]))]"
+        domain="[('type', 'in', {'out_invoice': ['sale']}.get(type, [])),"
+               "('tipo_doc_code', 'in',{'out_invoice': ['07']}.get(type,[]))]"
     )
 
     @api.multi

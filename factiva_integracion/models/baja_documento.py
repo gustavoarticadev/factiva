@@ -82,7 +82,10 @@ class BajaDocumento(models.Model):
         string='Usuario'
     )
 
-    consulta_id = fields.Char(string='ID de Consulta', compute='_compute_consulta_id')
+    consulta_id = fields.Char(
+        string='ID de Consulta',
+        compute='_compute_consulta_id'
+    )
 
     @api.depends('company_id', 'resp_id_resumen')
     def _compute_consulta_id(self):
@@ -105,8 +108,8 @@ class BajaDocumento(models.Model):
         else:
             seq = self.env['ir.sequence'].next_by_code('seq.baja.documento')\
                   or ''
-        _logger.info(documento)
-        _logger.info(seq)
+        # _logger.info(documento)
+        # _logger.info(seq)
         serie, correlativo = documento.number.split('-')
         detalle = [{
             'serie': serie,
@@ -129,7 +132,7 @@ class BajaDocumento(models.Model):
             'fechaGeneracion': self.fecha[:10],
         }
         self.name = 'RA' + '-' + self.company_id.vat + seq
-        _logger.info(json.dumps(data, indent=4))
+        # _logger.info(json.dumps(data, indent=4))
 
         self.json_envio = data
         rpta = send(
@@ -208,6 +211,7 @@ class BajaDocumento(models.Model):
             if 'estadoEmision' in data_rpta:
                 est_emision = data_rpta.get('estadoEmision')
                 return est_emision
+
     @api.multi
     def _cron_consulta_estado_baja(self, cron=False):
         self.ensure_one()
@@ -226,7 +230,6 @@ class BajaDocumento(models.Model):
                 for baja in baja_ids:
                     response = self.consultar_baja(baja, access_token)
                     rpta = self.procesar_rpta(response)
-
 
     @api.model
     def _cron_restart_sequence(self, sequence_code):
