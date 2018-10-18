@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+    <record model='factiva.provincia' id="provincia_pe_1"><field name="name">CHACHAPOYAS</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_1"/></record>
+    <record model='factiva.provincia' id="provincia_pe_2"><field name="name">BAGUA</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_1"/></record>
+    <record model='factiva.provincia' id="provincia_pe_3"><field name="name">BONGARA</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_1"/></record>
+    <record model='factiva.provincia' id="provincia_pe_4"><field name="name">CONDORCANQUI</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_1"/></record>
+    <record model='factiva.provincia' id="provincia_pe_5"><field name="name">LUYA</field><field name="code">05</field><field name="departamento_id" ref="departamento_pe_1"/></record>
+    <record model='factiva.provincia' id="provincia_pe_6"><field name="name">RODRIGUEZ DE MENDOZA</field><field name="code">06</field><field name="departamento_id" ref="departamento_pe_1"/></record>
+    <record model='factiva.provincia' id="provincia_pe_7"><field name="name">UTCUBAMBA</field><field name="code">07</field><field name="departamento_id" ref="departamento_pe_1"/></record>
+    <record model='factiva.provincia' id="provincia_pe_8"><field name="name">HUARAZ</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_9"><field name="name">AIJA</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_10"><field name="name">ANTONIO RAYMONDI</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_11"><field name="name">ASUNCION</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_12"><field name="name">BOLOGNESI</field><field name="code">05</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_13"><field name="name">CARHUAZ</field><field name="code">06</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_14"><field name="name">CARLOS FERMIN FITZCARRALD</field><field name="code">07</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_15"><field name="name">CASMA</field><field name="code">08</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_16"><field name="name">CORONGO</field><field name="code">09</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_17"><field name="name">HUARI</field><field name="code">10</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_18"><field name="name">HUARMEY</field><field name="code">11</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_19"><field name="name">HUAYLAS</field><field name="code">12</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_20"><field name="name">MARISCAL LUZURIAGA</field><field name="code">13</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_21"><field name="name">OCROS</field><field name="code">14</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_22"><field name="name">PALLASCA</field><field name="code">15</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_23"><field name="name">POMABAMBA</field><field name="code">16</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_24"><field name="name">RECUAY</field><field name="code">17</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_25"><field name="name">SANTA</field><field name="code">18</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_26"><field name="name">SIHUAS</field><field name="code">19</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_27"><field name="name">YUNGAY</field><field name="code">20</field><field name="departamento_id" ref="departamento_pe_2"/></record>
+    <record model='factiva.provincia' id="provincia_pe_28"><field name="name">ABANCAY</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_3"/></record>
+    <record model='factiva.provincia' id="provincia_pe_29"><field name="name">ANDAHUAYLAS</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_3"/></record>
+    <record model='factiva.provincia' id="provincia_pe_30"><field name="name">ANTABAMBA</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_3"/></record>
+    <record model='factiva.provincia' id="provincia_pe_31"><field name="name">AYMARAES</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_3"/></record>
+    <record model='factiva.provincia' id="provincia_pe_32"><field name="name">COTABAMBAS</field><field name="code">05</field><field name="departamento_id" ref="departamento_pe_3"/></record>
+    <record model='factiva.provincia' id="provincia_pe_33"><field name="name">CHINCHEROS</field><field name="code">06</field><field name="departamento_id" ref="departamento_pe_3"/></record>
+    <record model='factiva.provincia' id="provincia_pe_34"><field name="name">GRAU</field><field name="code">07</field><field name="departamento_id" ref="departamento_pe_3"/></record>
+    <record model='factiva.provincia' id="provincia_pe_35"><field name="name">AREQUIPA</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_4"/></record>
+    <record model='factiva.provincia' id="provincia_pe_36"><field name="name">CAMANA</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_4"/></record>
+    <record model='factiva.provincia' id="provincia_pe_37"><field name="name">CARAVELI</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_4"/></record>
+    <record model='factiva.provincia' id="provincia_pe_38"><field name="name">CASTILLA</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_4"/></record>
+    <record model='factiva.provincia' id="provincia_pe_39"><field name="name">CAYLLOMA</field><field name="code">05</field><field name="departamento_id" ref="departamento_pe_4"/></record>
+    <record model='factiva.provincia' id="provincia_pe_40"><field name="name">CONDESUYOS</field><field name="code">06</field><field name="departamento_id" ref="departamento_pe_4"/></record>
+    <record model='factiva.provincia' id="provincia_pe_41"><field name="name">ISLAY</field><field name="code">07</field><field name="departamento_id" ref="departamento_pe_4"/></record>
+    <record model='factiva.provincia' id="provincia_pe_42"><field name="name">LA UNION</field><field name="code">08</field><field name="departamento_id" ref="departamento_pe_4"/></record>
+    <record model='factiva.provincia' id="provincia_pe_43"><field name="name">HUAMANGA</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_5"/></record>
+    <record model='factiva.provincia' id="provincia_pe_44"><field name="name">CANGALLO</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_5"/></record>
+    <record model='factiva.provincia' id="provincia_pe_45"><field name="name">HUANCA SANCOS</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_5"/></record>
+    <record model='factiva.provincia' id="provincia_pe_46"><field name="name">HUANTA</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_5"/></record>
+    <record model='factiva.provincia' id="provincia_pe_47"><field name="name">LA MAR</field><field name="code">05</field><field name="departamento_id" ref="departamento_pe_5"/></record>
+    <record model='factiva.provincia' id="provincia_pe_48"><field name="name">LUCANAS</field><field name="code">06</field><field name="departamento_id" ref="departamento_pe_5"/></record>
+    <record model='factiva.provincia' id="provincia_pe_49"><field name="name">PARINACOCHAS</field><field name="code">07</field><field name="departamento_id" ref="departamento_pe_5"/></record>
+    <record model='factiva.provincia' id="provincia_pe_50"><field name="name">PAUCAR DEL SARA</field><field name="code">08</field><field name="departamento_id" ref="departamento_pe_5"/></record> SARA
+    <record model='factiva.provincia' id="provincia_pe_51"><field name="name">SUCRE</field><field name="code">09</field><field name="departamento_id" ref="departamento_pe_5"/></record>
+    <record model='factiva.provincia' id="provincia_pe_52"><field name="name">VICTOR FAJARDO</field><field name="code">10</field><field name="departamento_id" ref="departamento_pe_5"/></record>
+    <record model='factiva.provincia' id="provincia_pe_53"><field name="name">VILCAS HUAMAN</field><field name="code">11</field><field name="departamento_id" ref="departamento_pe_5"/></record>
+    <record model='factiva.provincia' id="provincia_pe_54"><field name="name">CAJAMARCA</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_6"/></record>
+    <record model='factiva.provincia' id="provincia_pe_55"><field name="name">CAJABAMBA</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_6"/></record>
+    <record model='factiva.provincia' id="provincia_pe_56"><field name="name">CELENDIN</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_6"/></record>
+    <record model='factiva.provincia' id="provincia_pe_57"><field name="name">CHOTA</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_6"/></record>
+    <record model='factiva.provincia' id="provincia_pe_58"><field name="name">CONTUMAZA</field><field name="code">05</field><field name="departamento_id" ref="departamento_pe_6"/></record>
+    <record model='factiva.provincia' id="provincia_pe_59"><field name="name">CUTERVO</field><field name="code">06</field><field name="departamento_id" ref="departamento_pe_6"/></record>
+    <record model='factiva.provincia' id="provincia_pe_60"><field name="name">HUALGAYOC</field><field name="code">07</field><field name="departamento_id" ref="departamento_pe_6"/></record>
+    <record model='factiva.provincia' id="provincia_pe_61"><field name="name">JAEN</field><field name="code">08</field><field name="departamento_id" ref="departamento_pe_6"/></record>
+    <record model='factiva.provincia' id="provincia_pe_62"><field name="name">SAN IGNACIO</field><field name="code">09</field><field name="departamento_id" ref="departamento_pe_6"/></record>
+    <record model='factiva.provincia' id="provincia_pe_63"><field name="name">SAN MARCOS</field><field name="code">10</field><field name="departamento_id" ref="departamento_pe_6"/></record>
+    <record model='factiva.provincia' id="provincia_pe_64"><field name="name">SAN MIGUEL</field><field name="code">11</field><field name="departamento_id" ref="departamento_pe_6"/></record>
+    <record model='factiva.provincia' id="provincia_pe_65"><field name="name">SAN PABLO</field><field name="code">12</field><field name="departamento_id" ref="departamento_pe_6"/></record>
+    <record model='factiva.provincia' id="provincia_pe_66"><field name="name">SANTA CRUZ</field><field name="code">13</field><field name="departamento_id" ref="departamento_pe_6"/></record>
+    <record model='factiva.provincia' id="provincia_pe_67"><field name="name">PROV. CONST. DEL CALLAO</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_7"/></record>. CONST. DEL CALLAO
+    <record model='factiva.provincia' id="provincia_pe_68"><field name="name">CUSCO</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_8"/></record>
+    <record model='factiva.provincia' id="provincia_pe_69"><field name="name">ACOMAYO</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_8"/></record>
+    <record model='factiva.provincia' id="provincia_pe_70"><field name="name">ANTA</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_8"/></record>
+    <record model='factiva.provincia' id="provincia_pe_71"><field name="name">CALCA</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_8"/></record>
+    <record model='factiva.provincia' id="provincia_pe_72"><field name="name">CANAS</field><field name="code">05</field><field name="departamento_id" ref="departamento_pe_8"/></record>
+    <record model='factiva.provincia' id="provincia_pe_73"><field name="name">CANCHIS</field><field name="code">06</field><field name="departamento_id" ref="departamento_pe_8"/></record>
+    <record model='factiva.provincia' id="provincia_pe_74"><field name="name">CHUMBIVILCAS</field><field name="code">07</field><field name="departamento_id" ref="departamento_pe_8"/></record>
+    <record model='factiva.provincia' id="provincia_pe_75"><field name="name">ESPINAR</field><field name="code">08</field><field name="departamento_id" ref="departamento_pe_8"/></record>
+    <record model='factiva.provincia' id="provincia_pe_76"><field name="name">LA CONVENCION</field><field name="code">09</field><field name="departamento_id" ref="departamento_pe_8"/></record>
+    <record model='factiva.provincia' id="provincia_pe_77"><field name="name">PARURO</field><field name="code">10</field><field name="departamento_id" ref="departamento_pe_8"/></record>
+    <record model='factiva.provincia' id="provincia_pe_78"><field name="name">PAUCARTAMBO</field><field name="code">11</field><field name="departamento_id" ref="departamento_pe_8"/></record>
+    <record model='factiva.provincia' id="provincia_pe_79"><field name="name">QUISPICANCHI</field><field name="code">12</field><field name="departamento_id" ref="departamento_pe_8"/></record>
+    <record model='factiva.provincia' id="provincia_pe_80"><field name="name">URUBAMBA</field><field name="code">13</field><field name="departamento_id" ref="departamento_pe_8"/></record>
+    <record model='factiva.provincia' id="provincia_pe_81"><field name="name">HUANCAVELICA</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_9"/></record>
+    <record model='factiva.provincia' id="provincia_pe_82"><field name="name">ACOBAMBA</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_9"/></record>
+    <record model='factiva.provincia' id="provincia_pe_83"><field name="name">ANGARAES</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_9"/></record>
+    <record model='factiva.provincia' id="provincia_pe_84"><field name="name">CASTROVIRREYNA</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_9"/></record>
+    <record model='factiva.provincia' id="provincia_pe_85"><field name="name">CHURCAMPA</field><field name="code">05</field><field name="departamento_id" ref="departamento_pe_9"/></record>
+    <record model='factiva.provincia' id="provincia_pe_86"><field name="name">HUAYTARA</field><field name="code">06</field><field name="departamento_id" ref="departamento_pe_9"/></record>
+    <record model='factiva.provincia' id="provincia_pe_87"><field name="name">TAYACAJA</field><field name="code">07</field><field name="departamento_id" ref="departamento_pe_9"/></record>
+    <record model='factiva.provincia' id="provincia_pe_88"><field name="name">HUANUCO</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_10"/></record>
+    <record model='factiva.provincia' id="provincia_pe_89"><field name="name">AMBO</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_10"/></record>
+    <record model='factiva.provincia' id="provincia_pe_90"><field name="name">DOS DE MAYO</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_10"/></record>
+    <record model='factiva.provincia' id="provincia_pe_91"><field name="name">HUACAYBAMBA</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_10"/></record>
+    <record model='factiva.provincia' id="provincia_pe_92"><field name="name">HUAMALIES</field><field name="code">05</field><field name="departamento_id" ref="departamento_pe_10"/></record>
+    <record model='factiva.provincia' id="provincia_pe_93"><field name="name">LEONCIO PRADO</field><field name="code">06</field><field name="departamento_id" ref="departamento_pe_10"/></record>
+    <record model='factiva.provincia' id="provincia_pe_94"><field name="name">MARAÑON</field><field name="code">07</field><field name="departamento_id" ref="departamento_pe_10"/></record>
+    <record model='factiva.provincia' id="provincia_pe_95"><field name="name">PACHITEA</field><field name="code">08</field><field name="departamento_id" ref="departamento_pe_10"/></record>
+    <record model='factiva.provincia' id="provincia_pe_96"><field name="name">PUERTO INCA</field><field name="code">09</field><field name="departamento_id" ref="departamento_pe_10"/></record>
+    <record model='factiva.provincia' id="provincia_pe_97"><field name="name">LAURICOCHA</field><field name="code">10</field><field name="departamento_id" ref="departamento_pe_10"/></record>
+    <record model='factiva.provincia' id="provincia_pe_98"><field name="name">YAROWILCA</field><field name="code">11</field><field name="departamento_id" ref="departamento_pe_10"/></record>
+    <record model='factiva.provincia' id="provincia_pe_99"><field name="name">ICA</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_11"/></record>
+    <record model='factiva.provincia' id="provincia_pe_100"><field name="name">CHINCHA</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_11"/></record>
+    <record model='factiva.provincia' id="provincia_pe_101"><field name="name">NASCA</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_11"/></record>
+    <record model='factiva.provincia' id="provincia_pe_102"><field name="name">PALPA</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_11"/></record>
+    <record model='factiva.provincia' id="provincia_pe_103"><field name="name">PISCO</field><field name="code">05</field><field name="departamento_id" ref="departamento_pe_11"/></record>
+    <record model='factiva.provincia' id="provincia_pe_104"><field name="name">HUANCAYO</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_12"/></record>
+    <record model='factiva.provincia' id="provincia_pe_105"><field name="name">CONCEPCION</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_12"/></record>
+    <record model='factiva.provincia' id="provincia_pe_106"><field name="name">CHANCHAMAYO</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_12"/></record>
+    <record model='factiva.provincia' id="provincia_pe_107"><field name="name">JAUJA</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_12"/></record>
+    <record model='factiva.provincia' id="provincia_pe_108"><field name="name">JUNIN</field><field name="code">05</field><field name="departamento_id" ref="departamento_pe_12"/></record>
+    <record model='factiva.provincia' id="provincia_pe_109"><field name="name">SATIPO</field><field name="code">06</field><field name="departamento_id" ref="departamento_pe_12"/></record>
+    <record model='factiva.provincia' id="provincia_pe_110"><field name="name">TARMA</field><field name="code">07</field><field name="departamento_id" ref="departamento_pe_12"/></record>
+    <record model='factiva.provincia' id="provincia_pe_111"><field name="name">YAULI</field><field name="code">08</field><field name="departamento_id" ref="departamento_pe_12"/></record>
+    <record model='factiva.provincia' id="provincia_pe_112"><field name="name">CHUPACA</field><field name="code">09</field><field name="departamento_id" ref="departamento_pe_12"/></record>
+    <record model='factiva.provincia' id="provincia_pe_113"><field name="name">TRUJILLO</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_13"/></record>
+    <record model='factiva.provincia' id="provincia_pe_114"><field name="name">ASCOPE</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_13"/></record>
+    <record model='factiva.provincia' id="provincia_pe_115"><field name="name">BOLIVAR</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_13"/></record>
+    <record model='factiva.provincia' id="provincia_pe_116"><field name="name">CHEPEN</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_13"/></record>
+    <record model='factiva.provincia' id="provincia_pe_117"><field name="name">JULCAN</field><field name="code">05</field><field name="departamento_id" ref="departamento_pe_13"/></record>
+    <record model='factiva.provincia' id="provincia_pe_118"><field name="name">OTUZCO</field><field name="code">06</field><field name="departamento_id" ref="departamento_pe_13"/></record>
+    <record model='factiva.provincia' id="provincia_pe_119"><field name="name">PACASMAYO</field><field name="code">07</field><field name="departamento_id" ref="departamento_pe_13"/></record>
+    <record model='factiva.provincia' id="provincia_pe_120"><field name="name">PATAZ</field><field name="code">08</field><field name="departamento_id" ref="departamento_pe_13"/></record>
+    <record model='factiva.provincia' id="provincia_pe_121"><field name="name">SANCHEZ CARRION</field><field name="code">09</field><field name="departamento_id" ref="departamento_pe_13"/></record>
+    <record model='factiva.provincia' id="provincia_pe_122"><field name="name">SANTIAGO DE CHUCO</field><field name="code">10</field><field name="departamento_id" ref="departamento_pe_13"/></record>
+    <record model='factiva.provincia' id="provincia_pe_123"><field name="name">GRAN CHIMU</field><field name="code">11</field><field name="departamento_id" ref="departamento_pe_13"/></record>
+    <record model='factiva.provincia' id="provincia_pe_124"><field name="name">VIRU</field><field name="code">12</field><field name="departamento_id" ref="departamento_pe_13"/></record>
+    <record model='factiva.provincia' id="provincia_pe_125"><field name="name">CHICLAYO</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_14"/></record>
+    <record model='factiva.provincia' id="provincia_pe_126"><field name="name">FERREÑAFE</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_14"/></record>
+    <record model='factiva.provincia' id="provincia_pe_127"><field name="name">LAMBAYEQUE</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_14"/></record>
+    <record model='factiva.provincia' id="provincia_pe_128"><field name="name">LIMA</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_15"/></record>
+    <record model='factiva.provincia' id="provincia_pe_129"><field name="name">BARRANCA</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_15"/></record>
+    <record model='factiva.provincia' id="provincia_pe_130"><field name="name">CAJATAMBO</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_15"/></record>
+    <record model='factiva.provincia' id="provincia_pe_131"><field name="name">CANTA</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_15"/></record>
+    <record model='factiva.provincia' id="provincia_pe_132"><field name="name">CAÑETE</field><field name="code">05</field><field name="departamento_id" ref="departamento_pe_15"/></record>
+    <record model='factiva.provincia' id="provincia_pe_133"><field name="name">HUARAL</field><field name="code">06</field><field name="departamento_id" ref="departamento_pe_15"/></record>
+    <record model='factiva.provincia' id="provincia_pe_134"><field name="name">HUAROCHIRI</field><field name="code">07</field><field name="departamento_id" ref="departamento_pe_15"/></record>
+    <record model='factiva.provincia' id="provincia_pe_135"><field name="name">HUAURA</field><field name="code">08</field><field name="departamento_id" ref="departamento_pe_15"/></record>
+    <record model='factiva.provincia' id="provincia_pe_136"><field name="name">OYON</field><field name="code">09</field><field name="departamento_id" ref="departamento_pe_15"/></record>
+    <record model='factiva.provincia' id="provincia_pe_137"><field name="name">YAUYOS</field><field name="code">10</field><field name="departamento_id" ref="departamento_pe_15"/></record>
+    <record model='factiva.provincia' id="provincia_pe_138"><field name="name">MAYNAS</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_16"/></record>
+    <record model='factiva.provincia' id="provincia_pe_139"><field name="name">ALTO AMAZONAS</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_16"/></record>
+    <record model='factiva.provincia' id="provincia_pe_140"><field name="name">LORETO</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_16"/></record>
+    <record model='factiva.provincia' id="provincia_pe_141"><field name="name">MARISCAL RAMON CASTILLA</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_16"/></record>
+    <record model='factiva.provincia' id="provincia_pe_142"><field name="name">REQUENA</field><field name="code">05</field><field name="departamento_id" ref="departamento_pe_16"/></record>
+    <record model='factiva.provincia' id="provincia_pe_143"><field name="name">UCAYALI</field><field name="code">06</field><field name="departamento_id" ref="departamento_pe_16"/></record>
+    <record model='factiva.provincia' id="provincia_pe_144"><field name="name">DATEM DEL MARAÑON</field><field name="code">07</field><field name="departamento_id" ref="departamento_pe_16"/></record>
+    <record model='factiva.provincia' id="provincia_pe_145"><field name="name">PUTUMAYO</field><field name="code">08</field><field name="departamento_id" ref="departamento_pe_16"/></record>
+    <record model='factiva.provincia' id="provincia_pe_146"><field name="name">TAMBOPATA</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_17"/></record>
+    <record model='factiva.provincia' id="provincia_pe_147"><field name="name">MANU</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_17"/></record>
+    <record model='factiva.provincia' id="provincia_pe_148"><field name="name">TAHUAMANU</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_17"/></record>
+    <record model='factiva.provincia' id="provincia_pe_149"><field name="name">MARISCAL NIETO</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_18"/></record>
+    <record model='factiva.provincia' id="provincia_pe_150"><field name="name">GENERAL SANCHEZ CERRO</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_18"/></record>
+    <record model='factiva.provincia' id="provincia_pe_151"><field name="name">ILO</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_18"/></record>
+    <record model='factiva.provincia' id="provincia_pe_152"><field name="name">PASCO</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_19"/></record>
+    <record model='factiva.provincia' id="provincia_pe_153"><field name="name">DANIEL ALCIDES CARRION</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_19"/></record>
+    <record model='factiva.provincia' id="provincia_pe_154"><field name="name">OXAPAMPA</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_19"/></record>
+    <record model='factiva.provincia' id="provincia_pe_155"><field name="name">PIURA</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_20"/></record>
+    <record model='factiva.provincia' id="provincia_pe_156"><field name="name">AYABACA</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_20"/></record>
+    <record model='factiva.provincia' id="provincia_pe_157"><field name="name">HUANCABAMBA</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_20"/></record>
+    <record model='factiva.provincia' id="provincia_pe_158"><field name="name">MORROPON</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_20"/></record>
+    <record model='factiva.provincia' id="provincia_pe_159"><field name="name">PAITA</field><field name="code">05</field><field name="departamento_id" ref="departamento_pe_20"/></record>
+    <record model='factiva.provincia' id="provincia_pe_160"><field name="name">SULLANA</field><field name="code">06</field><field name="departamento_id" ref="departamento_pe_20"/></record>
+    <record model='factiva.provincia' id="provincia_pe_161"><field name="name">TALARA</field><field name="code">07</field><field name="departamento_id" ref="departamento_pe_20"/></record>
+    <record model='factiva.provincia' id="provincia_pe_162"><field name="name">SECHURA</field><field name="code">08</field><field name="departamento_id" ref="departamento_pe_20"/></record>
+    <record model='factiva.provincia' id="provincia_pe_163"><field name="name">PUNO</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_21"/></record>
+    <record model='factiva.provincia' id="provincia_pe_164"><field name="name">AZANGARO</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_21"/></record>
+    <record model='factiva.provincia' id="provincia_pe_165"><field name="name">CARABAYA</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_21"/></record>
+    <record model='factiva.provincia' id="provincia_pe_166"><field name="name">CHUCUITO</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_21"/></record>
+    <record model='factiva.provincia' id="provincia_pe_167"><field name="name">EL COLLAO</field><field name="code">05</field><field name="departamento_id" ref="departamento_pe_21"/></record>
+    <record model='factiva.provincia' id="provincia_pe_168"><field name="name">HUANCANE</field><field name="code">06</field><field name="departamento_id" ref="departamento_pe_21"/></record>
+    <record model='factiva.provincia' id="provincia_pe_169"><field name="name">LAMPA</field><field name="code">07</field><field name="departamento_id" ref="departamento_pe_21"/></record>
+    <record model='factiva.provincia' id="provincia_pe_170"><field name="name">MELGAR</field><field name="code">08</field><field name="departamento_id" ref="departamento_pe_21"/></record>
+    <record model='factiva.provincia' id="provincia_pe_171"><field name="name">MOHO</field><field name="code">09</field><field name="departamento_id" ref="departamento_pe_21"/></record>
+    <record model='factiva.provincia' id="provincia_pe_172"><field name="name">SAN ANTONIO DE</field><field name="code">10</field><field name="departamento_id" ref="departamento_pe_21"/></record> PUTINA
+    <record model='factiva.provincia' id="provincia_pe_173"><field name="name">SAN ROMAN</field><field name="code">11</field><field name="departamento_id" ref="departamento_pe_21"/></record>
+    <record model='factiva.provincia' id="provincia_pe_174"><field name="name">SANDIA</field><field name="code">12</field><field name="departamento_id" ref="departamento_pe_21"/></record>
+    <record model='factiva.provincia' id="provincia_pe_175"><field name="name">YUNGUYO</field><field name="code">13</field><field name="departamento_id" ref="departamento_pe_21"/></record>
+    <record model='factiva.provincia' id="provincia_pe_176"><field name="name">MOYOBAMBA</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_22"/></record>
+    <record model='factiva.provincia' id="provincia_pe_177"><field name="name">BELLAVISTA</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_22"/></record>
+    <record model='factiva.provincia' id="provincia_pe_178"><field name="name">EL DORADO</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_22"/></record>
+    <record model='factiva.provincia' id="provincia_pe_179"><field name="name">HUALLAGA</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_22"/></record>
+    <record model='factiva.provincia' id="provincia_pe_180"><field name="name">LAMAS</field><field name="code">05</field><field name="departamento_id" ref="departamento_pe_22"/></record>
+    <record model='factiva.provincia' id="provincia_pe_181"><field name="name">MARISCAL CACERES</field><field name="code">06</field><field name="departamento_id" ref="departamento_pe_22"/></record>
+    <record model='factiva.provincia' id="provincia_pe_182"><field name="name">PICOTA</field><field name="code">07</field><field name="departamento_id" ref="departamento_pe_22"/></record>
+    <record model='factiva.provincia' id="provincia_pe_183"><field name="name">RIOJA</field><field name="code">08</field><field name="departamento_id" ref="departamento_pe_22"/></record>
+    <record model='factiva.provincia' id="provincia_pe_184"><field name="name">SAN MARTIN</field><field name="code">09</field><field name="departamento_id" ref="departamento_pe_22"/></record>
+    <record model='factiva.provincia' id="provincia_pe_185"><field name="name">TOCACHE</field><field name="code">10</field><field name="departamento_id" ref="departamento_pe_22"/></record>
+    <record model='factiva.provincia' id="provincia_pe_186"><field name="name">TACNA</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_23"/></record>
+    <record model='factiva.provincia' id="provincia_pe_187"><field name="name">CANDARAVE</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_23"/></record>
+    <record model='factiva.provincia' id="provincia_pe_188"><field name="name">JORGE BASADRE</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_23"/></record>
+    <record model='factiva.provincia' id="provincia_pe_189"><field name="name">TARATA</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_23"/></record>
+    <record model='factiva.provincia' id="provincia_pe_190"><field name="name">TUMBES</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_24"/></record>
+    <record model='factiva.provincia' id="provincia_pe_191"><field name="name">CONTRALMIRANTE VILLAR</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_24"/></record>
+    <record model='factiva.provincia' id="provincia_pe_192"><field name="name">ZARUMILLA</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_24"/></record>
+    <record model='factiva.provincia' id="provincia_pe_193"><field name="name">CORONEL PORTILLO</field><field name="code">01</field><field name="departamento_id" ref="departamento_pe_25"/></record>
+    <record model='factiva.provincia' id="provincia_pe_194"><field name="name">ATALAYA</field><field name="code">02</field><field name="departamento_id" ref="departamento_pe_25"/></record>
+    <record model='factiva.provincia' id="provincia_pe_195"><field name="name">PADRE ABAD</field><field name="code">03</field><field name="departamento_id" ref="departamento_pe_25"/></record>
+    <record model='factiva.provincia' id="provincia_pe_196"><field name="name">PURUS</field><field name="code">04</field><field name="departamento_id" ref="departamento_pe_25"/></record>
+
+</odoo>

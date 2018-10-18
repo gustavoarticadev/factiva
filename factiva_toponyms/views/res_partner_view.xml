@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id='view_partner_form_inherit_factiva_toponyms' model='ir.ui.view'>
+        <field name='name'>view.partner.form.inherit.factiva.toponyms</field>
+        <field name='model'>res.partner</field>
+        <field name='inherit_id' ref='base.view_partner_form'/>
+        <field name='type'>form</field>
+        <field name='arch' type='xml'>
+            <xpath expr="//field[@name='city']" position="replace"></xpath>
+            <xpath expr="//field[@name='state_id']" position="attributes">
+                <attribute name="attrs">{'invisible':True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='country_id']" position="replace"></xpath>
+            <xpath expr="//field[@name='zip']" position="replace"></xpath>
+            <xpath expr="//field[@name='street2']" position="replace">
+                <field name="street2" placeholder="Urbanización o Zona" class="o_address_street" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                <field name="country_id" placeholder="País" class="o_address_city" options="{'no_create': True, 'no_open': True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                <field name="departamento_id" class="o_address_city" placeholder="Departamento" options="{'no_create': True, 'no_open': True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"  domain="[('country_id', '=', country_id)]"/>
+                <field name="provincia_id" class="o_address_city" placeholder="Provincia" options="{'no_create': True, 'no_open': True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" domain="[('departamento_id', '=', departamento_id)]"/>
+                <field name="distrito_id" class="o_address_city" placeholder="Distrito" options="{'no_create': True, 'no_open': True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" domain="[('provincia_id', '=', provincia_id)]"/>
+                <field name="zip" placeholder="Código postal" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                <field name="city" placeholder="Otra referencia" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Open partner address -->
+    <record id="view_partner_address_form_inherit_factiva_toponyms" model="ir.ui.view">
+        <field name="name">view_partner.address.form.inherit.factiva.toponyms</field>
+        <field name="model">res.partner</field>
+        <field name='inherit_id' ref='base.view_partner_address_form'/>
+        <field name="arch" type="xml">
+            <div class="o_address_format" position="replace">
+                <div class="o_address_format">
+                    <field name="street" placeholder="Street..." class="o_address_street"/>
+                    <field name="street2" placeholder="Urbanización o Zona" class="o_address_street" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                    <field name="country_id" placeholder="Country" class="o_address_city" options="{'no_create': True, 'no_open': True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                    <field name="departamento_id" class="o_address_state" placeholder="Departamento" options="{'no_create': True, 'no_open': True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"  domain="[('country_id', '=', country_id)]"/>
+                    <field name="provincia_id" class="o_address_city" placeholder="Provincia" style="width: 48%" options="{'no_create': True, 'no_open': True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" domain="[('departamento_id', '=', departamento_id)]"/>
+                    <field name="distrito_id" class="o_address_state" placeholder="Distrito" style="width: 48%" options="{'no_create': True, 'no_open': True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" domain="[('provincia_id', '=', provincia_id)]"/>
+                    <field name="zip" placeholder="ZIP" style="width: 48%" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                    <field name="city" placeholder="Otra referencia" style="width: 48%" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                </div>
+            </div>
+        </field>
+    </record>
+
+</odoo>

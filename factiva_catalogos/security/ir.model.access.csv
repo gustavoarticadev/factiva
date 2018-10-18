@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_factiva_catalogo,access_factiva_catalogo,model_factiva_catalogo,base.group_user,1,0,0,0
+access_factiva_catalogo_01,access_factiva_catalogo_01 user,model_factiva_catalogo_01,base.group_user,1,0,0,0
+access_factiva_catalogo_05,access_factiva_catalogo_05 user,model_factiva_catalogo_05,base.group_user,1,0,0,0
+access_factiva_catalogo_06,access_factiva_catalogo_06 user,model_factiva_catalogo_06,base.group_user,1,0,0,0
+access_factiva_catalogo_07,access_factiva_catalogo_07 user,model_factiva_catalogo_07,base.group_user,1,0,0,0
+access_factiva_catalogo_08,access_factiva_catalogo_08 user,model_factiva_catalogo_08,base.group_user,1,0,0,0
+access_factiva_catalogo_09,access_factiva_catalogo_09 user,model_factiva_catalogo_09,base.group_user,1,0,0,0
+access_factiva_catalogo_10,access_factiva_catalogo_10 user,model_factiva_catalogo_10,base.group_user,1,0,0,0
+access_factiva_catalogo_16,access_factiva_catalogo_16 user,model_factiva_catalogo_16,base.group_user,1,0,0,0

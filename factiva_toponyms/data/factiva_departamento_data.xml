@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+    <record model='factiva.departamento' id="departamento_pe_1"><field name="name">AMAZONAS</field><field name="code">01</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_2"><field name="name">ANCASH</field><field name="code">02</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_3"><field name="name">APURIMAC</field><field name="code">03</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_4"><field name="name">AREQUIPA</field><field name="code">04</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_5"><field name="name">AYACUCHO</field><field name="code">05</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_6"><field name="name">CAJAMARCA</field><field name="code">06</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_7"><field name="name">CALLAO</field><field name="code">07</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_8"><field name="name">CUSCO</field><field name="code">08</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_9"><field name="name">HUANCAVELICA</field><field name="code">09</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_10"><field name="name">HUANUCO</field><field name="code">10</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_11"><field name="name">ICA</field><field name="code">11</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_12"><field name="name">JUNIN</field><field name="code">12</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_13"><field name="name">LA LIBERTAD</field><field name="code">13</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_14"><field name="name">LAMBAYEQUE</field><field name="code">14</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_15"><field name="name">LIMA</field><field name="code">15</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_16"><field name="name">LORETO</field><field name="code">16</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_17"><field name="name">MADRE DE DIOS</field><field name="code">17</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_18"><field name="name">MOQUEGUA</field><field name="code">18</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_19"><field name="name">PASCO</field><field name="code">19</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_20"><field name="name">PIURA</field><field name="code">20</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_21"><field name="name">PUNO</field><field name="code">21</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_22"><field name="name">SAN MARTIN</field><field name="code">22</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_23"><field name="name">TACNA</field><field name="code">23</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_24"><field name="name">TUMBES</field><field name="code">24</field><field name="country_id" ref="base.pe"/></record>
+    <record model='factiva.departamento' id="departamento_pe_25"><field name="name">UCAYALI</field><field name="code">25</field><field name="country_id" ref="base.pe"/></record>
+
+</odoo>

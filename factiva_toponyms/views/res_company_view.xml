@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_company_form_inherit_factiva_toponyms" model="ir.ui.view">
+        <field name="name">view.company.form.inherit.factiva.toponyms</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='city']" position="replace"></xpath>
+            <xpath expr="//field[@name='state_id']" position="attributes">
+                <attribute name="attrs">{'invisible':True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='zip']" position="replace"></xpath>
+            <xpath expr="//field[@name='country_id']" position="replace"></xpath>
+            <xpath expr="//field[@name='street2']" position="replace">
+                <field name="street2" placeholder="Urbanización o Zona" class="o_address_street"/>
+                <field name="country_id" placeholder="País" class="o_address_city" options="{'no_create': True, 'no_open': True}"/>
+                <field name="departamento_id" class="o_address_city" placeholder="Departamento" options="{'no_create': True, 'no_open': True}" domain="[('country_id', '=', country_id)]"/>
+                <field name="provincia_id" class="o_address_city" placeholder="Provincia" options="{'no_create': True, 'no_open': True}" domain="[('departamento_id', '=', departamento_id)]"/>
+                <field name="distrito_id" class="o_address_city" placeholder="Distrito" options="{'no_create': True, 'no_open': True}" domain="[('provincia_id', '=', provincia_id)]"/>
+                <field name="zip" placeholder="Código postal"/>
+                <field name="city" placeholder="Otra referencia"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
