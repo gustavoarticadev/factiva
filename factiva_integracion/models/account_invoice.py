@@ -4,6 +4,7 @@ import pytz
 import voluptuous
 from voluptuous import Schema, Required, All, Length, ALLOW_EXTRA, Coerce
 from dateutil.relativedelta import relativedelta
+import re
 
 from odoo import api, fields, models
 
@@ -176,7 +177,8 @@ class AccountInvoice(models.Model):
     def _compute_fa_consulta_id(self):
         for inv in self:
             if inv.company_id and inv.journal_id and inv.number:
-                if inv.number.find('-') > 0:
+                pattern_serie_corr = "^\w{4}\-\w+$"
+                if re.match(pattern_serie_corr, inv.number):
                     serie, correlativo = inv.number.split('-')
                     formatt = '%(tipo_doc_emisor)s-%(ruc)s-' \
                               '%(tipo_doc_cmp)s-%(serie)s-%(correlativo)s'
