@@ -31,6 +31,8 @@ TYPE2REFUND = {
     'in_refund': 'in_invoice',          # Vendor Credit Note
 }
 
+PATTERN_SERIE_CORRELATIVO = "^\w{4}\-\w+$"
+
 
 class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
@@ -177,8 +179,8 @@ class AccountInvoice(models.Model):
     def _compute_fa_consulta_id(self):
         for inv in self:
             if inv.company_id and inv.journal_id and inv.number:
-                pattern_serie_corr = "^\w{4}\-\w+$"
-                if re.match(pattern_serie_corr, inv.number):
+
+                if re.match(PATTERN_SERIE_CORRELATIVO, inv.number):
                     serie, correlativo = inv.number.split('-')
                     formatt = '%(tipo_doc_emisor)s-%(ruc)s-' \
                               '%(tipo_doc_cmp)s-%(serie)s-%(correlativo)s'
@@ -361,7 +363,14 @@ class AccountInvoice(models.Model):
         today = fields.Datetime.to_string(today)
 
         # Serie - Correlativo
-        serie, correlativo = self.number.split('-')
+        if re.match(PATTERN_SERIE_CORRELATIVO, self.number):
+            serie, correlativo = self.number.split('-')
+        else:
+            return self.env['mensaje.emergente'].get_mensaje(
+                    'Validación de campos', 'La serie y el correlativo '
+                                            'no tienen un patron adecuado '
+                                            'para la facturación electrónica. '
+                                            'Ejm: XXXX-X')
 
         if tipo_doc in '01':
             if (receptor.tipo_doc_id.code is False
