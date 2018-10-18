@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="invoice_tree_inherit_factiva_integracion" model="ir.ui.view">
+        <field name="name">invoice.tree.inherit.factiva.integracion</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="before">
+                 <field name="estado_envio"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="invoice_form_inherit_factiva_integracion" model="ir.ui.view">
+        <field name="name">invoice.form.inherit.factiva.integracion</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//button[@name='action_invoice_open']" position="after">
+                <button name="action_invoicing" type="object" string="Reenvío"
+                        class="oe_highlight o_invoice_validate"
+                        attrs="{'invisible': ['|',('state', '=', 'draft'),('estado_envio', '!=', 'xenviar')]}"
+                        groups="base.group_system"/>
+                <button name="action_open_logs" type='object' string="Listado Logs"
+                        attrs="{'invisible':[('state','=','draft')]}" groups="account.group_account_invoice"/>
+                <button name="action_baja_comprobante" type='object' string="Baja Documento"
+                        attrs="{'invisible':['|',('state','=','draft'),('estado_envio','=','xenviar')]}" groups="account.group_account_invoice"/>
+                <!--<button name="action_estado_envio" type='object' string="Estado Envío"-->
+                        <!--attrs="{'invisible':['|',('state','=','draft'),('estado_envio','=','xenviar')]}" groups="account.group_account_invoice"/>-->
+                <button name="action_print_documento_fa" type='object' string="Imprimir Comp."
+                        attrs="{'invisible':['|',('state','=','draft'),('estado_envio','=','xenviar')]}" groups="account.group_account_invoice"/>
+            </xpath>
+
+            <xpath expr="//h1[hasclass('mt0')]" position="replace">
+                <h1 class="mt0" >
+                    <!--<label string="Draft Invoice" attrs="{'invisible': ['|',('state','not in',('draft',)), ('type','!=','out_invoice')]}"/>-->
+                    <label string="Factura Borrador" attrs="{'invisible': ['|',('state','not in',('draft',)),'|',('type','!=','out_invoice'),('tipo_doc_id','!=','01')]}"/>
+                    <label string="Boleta Borrador" attrs="{'invisible': ['|',('state','not in',('draft',)),'|',('type','!=','out_invoice'),('tipo_doc_id','!=','03')]}"/>
+                    <label string="Nota Débito Borrador" attrs="{'invisible': ['|',('state','not in',('draft',)),'|',('type','!=','out_invoice'),('tipo_doc_id','!=','08')]}"/>
+                    <label string="Nota de Crédito Borrador" attrs="{'invisible': ['|',('state','not in',('draft',)), ('type','&lt;&gt;','out_refund')]}"/>
+                    <field name="number" readonly="1" class="oe_inline" attrs="{'invisible': [('state','in',('draft',))]}"/>
+                </h1>
+            </xpath>
+
+            <xpath expr="//field[@name='journal_id']" position="replace"/>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="journal_id" groups="account.group_account_user"
+                        options="{'no_create': True}" attrs="{'readonly':[('move_name','!=',False)]}"/>
+                <!--<field name="fa_consulta_id"/>-->
+                <field name="estado_envio" readonly="1"/>
+                <field name="tipo_doc_id" invisible="1" />
+                <field name="tipo_doc_rel_code" invisible="1"/>
+                <field name="tipo_ndeb_id"
+                       attrs="{'invisible': ['|',('type','!=','out_invoice'),('tipo_doc_id','!=','08')], 'required': [('tipo_doc_id','=', '08')], 'readonly':[('state','!=','draft')]}"
+                       options="{'no_create': True, 'no_open': True}"
+                />
+                <field name="tipo_ndeb_code" invisible="1"/>
+                <field name="inv_ndeb_rel_id"
+                       attrs="{'invisible': ['|',('type','!=','out_invoice'),('tipo_doc_id','!=','08')], 'required': [('tipo_ndeb_code', 'in', ['01','02'])], 'readonly':[('state','!=','draft')]}"
+                       domain="[('partner_id', '=', partner_id),('type', '=', 'out_invoice'),('estado_envio', '=', 'acep_sunat'),('journal_id.tipo_doc_id.code','=', tipo_doc_rel_code)]"
+                       options="{'no_create': True, 'no_open': True}"
+                />
+                <field name="sustento_ndeb"
+                       attrs="{'invisible': ['|',('type','!=','out_invoice'),('tipo_doc_id','!=','08')], 'required': [('tipo_doc_id','=','08')], 'readonly':[('state','!=','draft')]}"/>
+            </xpath>
+
+            <button name="%(account.action_account_invoice_refund)d" position="attributes">
+                <attribute name="attrs">{'invisible': ['|',('type', '=', 'out_refund'), '|',('state', 'not in', ('open','paid')),('tipo_doc_id','=','08')]}</attribute>
+            </button>
+            <xpath expr="//field[@name='payment_term_id']" position="replace"/>
+            <xpath expr="//field[@name='date_invoice']" position="after">
+                 <field name="payment_term_id" />
+            </xpath>
+            <xpath expr="//field[@name='date_invoice']" position="attributes">
+                 <attribute name="string">Fecha Doc.</attribute>
+            </xpath>
+
+            <!--<xpath expr="//field[@name='sent']" position="before">-->
+                <!--<group>-->
+                      <!--<field name="global_descuento" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                 <!--</group>-->
+            <!--</xpath>-->
+            <xpath expr="//field[@name='amount_untaxed']" position="replace"/>
+            <!--<xpath expr="//field[@name='amount_tax']" position="replace"/>-->
+
+            <xpath expr="//field[@name='amount_tax']" position="before">
+                <field name="total_amount_exonerado" attrs="{'invisible':[('total_amount_exonerado','=', 0.0)]}"/>
+                <field name="total_amount_inafecto" attrs="{'invisible':[('total_amount_inafecto','=', 0.0)]}"/>
+                <field name="total_amount_gravado" attrs="{'invisible':[('total_amount_gravado','=', 0.0)]}"/>
+                <field name="total_descuentos" attrs="{'invisible':[('total_descuentos','=', 0.0)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='amount_tax']" position="after">
+                <field name="total_descuento_global" attrs="{'invisible':[('total_descuento_global','=', 0.0)]}"/>
+                <field name="total_tax_discount" attrs="{'invisible':[('total_tax_discount','=', 0.0)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

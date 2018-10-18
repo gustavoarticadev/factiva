@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_account_journal_form_inherit_factiva_integracion" model="ir.ui.view">
+        <field name="name">view.account.journal.form.inherit.factiva.integracion</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="es_electronica"/>
+                <field name="tipo_doc_id" options="{'no_create': True, 'no_open': True}"
+                       attrs="{'invisible': [('es_electronica', '=', False)], 'required': [('es_electronica', '!=', False)]}"/>
+                <field name="tipo_doc_rel_id" options="{'no_create': True, 'no_open': True}"
+                       attrs="{'invisible': [('es_electronica', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_journal_tree_inherit_factiva_integracion" model="ir.ui.view">
+        <field name="name">view.account.journal.tree.inherit.factiva.integracion</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="tipo_doc_id"/>
+                <field name="es_electronica"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_tax_tree_inherit_factiva_integracion" model="ir.ui.view">
+        <field name="name">account.tax.tree.inherit.factiva.integracion</field>
+        <field name="model">account.tax</field>
+        <field name="inherit_id" ref="account.view_tax_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="tipo_imp_sunat" />
+                <field name="afect_igv" />
+            </xpath>
+        </field>
+    </record>
+    <record id="view_tax_form_inherit_factiva_integracion" model="ir.ui.view">
+        <field name="name">account.tax.form.inherit.factiva.integracion</field>
+        <field name="model">account.tax</field>
+        <field name="inherit_id" ref="account.view_tax_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="tipo_imp_sunat" options="{'no_create': True, 'no_open': True}" />
+            </xpath>
+            <xpath expr="//field[@name='type_tax_use']" position="after">
+                <field name="afect_igv" options="{'no_create': True, 'no_open': True}" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

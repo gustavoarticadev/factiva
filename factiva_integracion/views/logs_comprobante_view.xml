@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="log_tree_view" model="ir.ui.view">
+        <field name="name">log.tree.view</field>
+        <field name="model">logs.comprobante</field>
+        <field name="arch" type="xml">
+            <tree string="Logs">
+                <field name="invoice_id" invisible="True" />
+                <field name="fecha" />
+                <field name="descripcion" />
+                <field name="estado_ini" />
+                <field name="estado_fin" />
+                <field name="descripcion_detallada" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_logs_wizard_view" model="ir.actions.act_window">
+        <field name="name">Listado Logs</field>
+        <field name="res_model">logs.comprobante</field>
+        <field name="view_type">tree</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('invoice_id','=', active_id)]</field>
+        <field name="view_id" ref="log_tree_view"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

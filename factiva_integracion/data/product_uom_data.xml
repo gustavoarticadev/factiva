@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+    <record model="product.uom" id="product.product_uom_cm"><field name="code">CMT</field></record>
+    <record model="product.uom" id="product.product_uom_qt"><field name="code">GLL</field></record>
+    <record model="product.uom" id="product.product_uom_day"><field name="code">DAY</field></record>
+    <record model="product.uom" id="product.product_uom_dozen"><field name="code">DZN</field></record>
+    <record model="product.uom" id="product.product_uom_floz"><field name="code">OZI</field></record>
+    <record model="product.uom" id="product.product_uom_gram"><field name="code">GR</field></record>
+    <record model="product.uom" id="product.product_uom_gal"><field name="code">GLL</field></record>
+    <record model="product.uom" id="product.product_uom_hour"><field name="code">HUR</field></record>
+    <record model="product.uom" id="product.product_uom_kgm"><field name="code">KGM</field></record>
+    <record model="product.uom" id="product.product_uom_km"><field name="code">KTM</field></record>
+    <record model="product.uom" id="product.product_uom_lb"><field name="code">LBR</field></record>
+    <record model="product.uom" id="product.product_uom_litre"><field name="code">LTR</field></record>
+    <record model="product.uom" id="product.product_uom_meter"><field name="code">MTR</field></record>
+    <record model="product.uom" id="product.product_uom_mile"><field name="code">SMI</field></record>
+    <record model="product.uom" id="product.product_uom_oz"><field name="code">ONZ</field></record>
+    <record model="product.uom" id="product.product_uom_foot"><field name="code">FOT</field></record>
+    <record model="product.uom" id="product.product_uom_inch"><field name="code">INH</field></record>
+    <record model="product.uom" id="product.product_uom_ton"><field name="code">LTN</field></record>
+    <record model="product.uom" id="product.product_uom_unit"><field name="code">NIU</field></record>
+
+</odoo>

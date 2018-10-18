@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_account_invoice_refund_inherit_factiva_integracion" model="ir.ui.view">
+        <field name="name">view.account.invoice.refund.inherit.factiva.integracion</field>
+        <field name="model">account.invoice.refund</field>
+        <field name="inherit_id" ref="account.view_account_invoice_refund"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='description']" position="before">
+                <field name="type" invisible="1"/>
+                <field name="journal_id" attrs="{'invisible': [('type', '!=', 'out_invoice')], 'required': [('type', '=', 'out_invoice')]}"
+                       options="{'no_create': True, 'no_open': True}"/>
+                <field name="tipo_doc_id" attrs="{'invisible': [('type', '!=', 'out_invoice')], 'required': [('type', '=', 'out_invoice')]}"
+                       options="{'no_create': True, 'no_open': True}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

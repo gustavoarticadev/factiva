@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="baja_documento_tree_view" model="ir.ui.view">
+        <field name="name">baja.documento.tree.view</field>
+        <field name="model">baja.documento</field>
+        <field name="arch" type="xml">
+            <tree string="Baja Documento">
+                <field name="invoice_id"/>
+                <field name="name" />
+                <field name="fecha" />
+                <field name="motivo" />
+                <field name="user_id"/>
+                <field name="resp_id_resumen"/>
+                <field name="resp_id_ticket"/>
+                <field name="resp_estado_emision"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="send_baja_documento_form_view" model="ir.ui.view">
+        <field name="name">send.baja.documento.form.view</field>
+        <field name="model">baja.documento</field>
+        <field name="arch" type="xml">
+            <form string="Baja Documento">
+                <group string="Datos">
+                    <group>
+                        <field name="name" invisible="1"/>
+                        <field name="invoice_id" readonly="1"/>
+                        <field name="company_id" invisible="1"/>
+                    </group>
+                    <group>
+                        <field name="fecha" readonly="1"/>
+                        <field name="user_id" readonly="1"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="motivo" required="1"/>
+                </group>
+                <footer>
+                    <button string='Enviar Solicitud de Baja' name="action_comm_baja" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="baja_documento_form_view" model="ir.ui.view">
+        <field name="name">baja.documento.form.view</field>
+        <field name="model">baja.documento</field>
+        <field name="arch" type="xml">
+            <form string="Baja Documento">
+                <group string="Datos">
+                    <group>
+                        <field name="name" readonly="1"/>
+                        <field name="invoice_id" readonly="1"/>
+                        <field name="company_id" invisible="1"/>
+                    </group>
+                    <group>
+                        <field name="fecha" readonly="1"/>
+                        <field name="user_id" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="motivo" readonly="1"/>
+                    </group>
+                </group>
+                <group string="Respuesta">
+                    <group>
+                        <field name="resp_id_resumen" readonly="1"/>
+                        <field name="resp_id_ticket" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="resp_estado_emision" readonly="1"/>
+                    </group>
+                    <field name="resp_observaciones" readonly="1"/>
+                </group>
+                <footer>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>
