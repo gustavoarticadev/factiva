@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id='view_partner_form_inherit_factiva_toponyms' model='ir.ui.view'>
+        <field name='name'>view.partner.form.inherit.factiva.toponyms</field>
+        <field name='model'>res.partner</field>
+        <field name='inherit_id' ref='base.view_partner_form'/>
+        <field name='type'>form</field>
+        <field name='arch' type='xml'>
+            <xpath expr="//field[@name='vat']" position="replace"/>
+            <div class="o_row" position="after">
+                <div class="o_row">
+                    <field name="tipo_doc_id" placeholder="Tipo Doc." colspan="1" nolabel="1" widget="selection"/>
+                    <field name="vat" placeholder="Número de Documento" colspan="3" nolabel="1"/>
+                </div>
+            </div>
+        </field>
+    </record>
+
+</odoo>
